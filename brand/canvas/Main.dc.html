@@ -1,0 +1,123 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=IBM+Plex+Mono:wght@400;500&family=Jost:wght@300;400&display=swap">
+  <style>
+    body { margin: 0; }
+    a { color: #B4924E; text-decoration: none; }
+    a:hover { color: #D9B978; }
+    .mono { font-family: 'IBM Plex Mono', 'SF Mono', Consolas, monospace; letter-spacing: 0.13em; text-transform: uppercase; }
+  </style>
+</helmet>
+
+<div style="width: 1440px; height: 900px; background: #16181A; color: #E6E1D6; font-family: 'Jost', 'Futura', sans-serif; display: flex; flex-direction: column; overflow: hidden; position: relative;">
+
+  <!-- hairline grid -->
+  <div style="position: absolute; inset: 0; pointer-events: none; background-image: linear-gradient(to right, rgba(230,225,214,0.055) 1px, transparent 1px); background-size: 180px 100%; background-position: 72px 0;"></div>
+
+  <!-- NAV -->
+  <div style="position: relative; display: flex; align-items: center; justify-content: space-between; padding: 30px 72px 0;">
+    <div style="font-family: 'Instrument Serif', 'Didot', Georgia, serif; font-size: 26px; letter-spacing: 0.34em; text-indent: 0.34em;">CARSON</div>
+    <div style="display: flex; gap: 40px;">
+      <span class="mono" style="font-size: 11px; color: #9A968C;">Collection</span>
+      <span class="mono" style="font-size: 11px; color: #9A968C;">The Workshop</span>
+      <span class="mono" style="font-size: 11px; color: #9A968C;">Stockists</span>
+      <span class="mono" style="font-size: 11px; color: #E6E1D6;">Bag (0)</span>
+    </div>
+  </div>
+
+  <!-- BODY -->
+  <div style="position: relative; flex-grow: 1; display: grid; grid-template-columns: 545px minmax(0, 1fr); align-items: center; gap: 24px; padding: 0 72px;">
+
+    <!-- LEFT: the argument -->
+    <div style="display: flex; flex-direction: column; gap: 0;">
+      <div style="display: flex; align-items: center; gap: 12px;">
+        <span style="width: 26px; height: 1px; background: #B4924E;"></span>
+        <span class="mono" style="font-size: 11px; color: #B4924E;">Lot 001 &mdash; The Low&#8209;Top</span>
+      </div>
+
+      <h1 style="margin: 26px 0 0; font-family: 'Instrument Serif', 'Didot', Georgia, serif; font-weight: 400; font-size: 63px; line-height: 1.045; letter-spacing: -0.005em; text-wrap: pretty;">For twenty&#8209;five years, our work left in someone&nbsp;else's&nbsp;box.</h1>
+
+      <p style="margin: 26px 0 0; font-size: 15.5px; line-height: 1.72; font-weight: 300; color: #A8A398; max-width: 452px;">Carson is the workshop &mdash; not the label that hired it. Full&#8209;grain leather, hand&#8209;finished, made in Agra to the European export standard we have worked to for twenty&#8209;five years.</p>
+
+      <div style="display: flex; align-items: center; gap: 26px; margin-top: 38px;">
+        <div style="display: flex; align-items: center; gap: 11px; background: #E6E1D6; color: #16181A; padding: 15px 26px;">
+          <span class="mono" style="font-size: 11.5px; font-weight: 500;">See the Collection</span>
+          <svg width="15" height="9" viewBox="0 0 15 9" fill="none" stroke="#16181A" stroke-width="1.3"><path d="M0 4.5h13M9.5 1l3.5 3.5-3.5 3.5"/></svg>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 3px;">
+          <span class="mono" style="font-size: 10px; color: #78746C;">From</span>
+          <span style="font-family: 'Instrument Serif', Georgia, serif; font-size: 21px;">[YOUR PRICE]</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT: the product, annotated -->
+    <div style="width: 100%;">
+      <svg viewBox="0 0 900 720" width="100%" style="display: block;" role="img" aria-label="Carson low-top sneaker in bone full-grain leather with construction annotations">
+        <g stroke="#B4924E" stroke-width="0.9" fill="none" opacity="0.85">
+          <path d="M188,150 L286,396"/>
+          <path d="M712,150 L616,368"/>
+          <path d="M196,632 L404,494"/>
+        </g>
+        <g fill="#B4924E">
+          <circle cx="288" cy="400" r="3"/>
+          <circle cx="618" cy="364" r="3"/>
+          <circle cx="406" cy="491" r="3"/>
+        </g>
+
+        <g font-family="'IBM Plex Mono', Consolas, monospace" font-size="14" letter-spacing="1.7" fill="#B4924E">
+          <text x="56" y="118">01</text>
+          <text x="632" y="118">02</text>
+          <text x="56" y="658">03</text>
+        </g>
+        <g font-family="'IBM Plex Mono', Consolas, monospace" font-size="14" letter-spacing="1.7" fill="#A8A398">
+          <text x="90" y="118">FULL-GRAIN UPPER</text>
+          <text x="666" y="118">HAND-FINISHED COLLAR</text>
+          <text x="90" y="658">STITCHED BY HAND, IN PART</text>
+        </g>
+
+        <g transform="translate(50,190)">
+          <ellipse cx="392" cy="352" rx="318" ry="12" fill="#000000" opacity="0.34"/>
+          <path d="M66,296 C50,310 54,328 80,334 L688,334 C716,332 728,316 716,296 Z" fill="#F0EBE0"/>
+          <path d="M72,298 C68,260 98,238 150,226 C220,210 300,206 360,208 C450,196 560,178 628,172 C652,170 660,178 662,190 C668,234 686,268 700,298 Z" fill="#DCD5C7"/>
+          <path d="M334,212 C342,188 358,176 380,175 C396,174 403,184 400,197 L394,206 Z" fill="#C9C1B1"/>
+          <path d="M170,222 C178,256 180,278 182,298" fill="none" stroke="#A2977F" stroke-width="1.4" stroke-dasharray="3 5"/>
+          <path d="M406,201 C420,238 425,270 429,298" fill="none" stroke="#A2977F" stroke-width="1.4" stroke-dasharray="3 5"/>
+          <path d="M598,180 C594,228 599,266 605,298" fill="none" stroke="#A2977F" stroke-width="1.4" stroke-dasharray="3 5"/>
+          <path d="M470,192 C540,182 592,177 630,176" fill="none" stroke="#A2977F" stroke-width="1.2" opacity="0.7"/>
+          <path d="M92,292 C220,286 520,282 686,290" fill="none" stroke="#9E9078" stroke-width="1.4" stroke-dasharray="2 6"/>
+          <g stroke="#FBF8F1" stroke-width="4.5" stroke-linecap="round" fill="none">
+            <path d="M312,214 L356,202"/>
+            <path d="M348,206 L392,194"/>
+            <path d="M384,198 L424,188"/>
+          </g>
+          <g fill="#8A8070">
+            <circle cx="318" cy="220" r="3.4"/>
+            <circle cx="354" cy="211" r="3.4"/>
+            <circle cx="390" cy="203" r="3.4"/>
+            <circle cx="424" cy="196" r="3.4"/>
+          </g>
+        </g>
+      </svg>
+    </div>
+  </div>
+
+  <!-- FOOTER TICKER -->
+  <div style="position: relative; border-top: 1px solid rgba(230,225,214,0.14); margin: 0 72px; padding: 17px 0 26px; display: flex; justify-content: space-between;">
+    <span class="mono" style="font-size: 10.5px; color: #78746C;">Made in Agra, India</span>
+    <span class="mono" style="font-size: 10.5px; color: #78746C;">Free shipping &amp; returns</span>
+    <span class="mono" style="font-size: 10.5px; color: #78746C;">Twenty&#8209;five years on the bench</span>
+    <span class="mono" style="font-size: 10.5px; color: #78746C;">Est. Carson Overseas</span>
+  </div>
+
+</div>
+</x-dc>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500&family=Jost:wght@300;400;500&display=swap">
+  <style>
+    body { margin: 0; }
+    a { color: #8C6A3F; text-decoration: none; }
+    a:hover { color: #5E4526; }
+    .lbl { font-family: 'Jost', 'Futura', sans-serif; letter-spacing: 0.18em; text-transform: uppercase; }
+    .ser { font-family: 'Bodoni Moda', 'Didot', Georgia, serif; }
+  </style>
+</helmet>
+
+<div style="width: 720px; height: 900px; background: #F3EFE7; color: #17140F; font-family: 'Jost', 'Futura', sans-serif; padding: 44px 48px; box-sizing: border-box; display: flex; flex-direction: column; gap: 26px; overflow: hidden;">
+
+  <div style="display: flex; justify-content: space-between; align-items: baseline;">
+    <span class="lbl" style="font-size: 11px; color: #8C6A3F;">Direction A</span>
+    <span class="lbl" style="font-size: 11px; color: #6B6157;">The House</span>
+  </div>
+
+  <!-- WORDMARK -->
+  <div style="border-top: 1px solid rgba(23,20,15,0.14); padding-top: 30px; display: flex; flex-direction: column; align-items: center; gap: 12px;">
+    <div class="ser" style="font-size: 50px; letter-spacing: 0.42em; text-indent: 0.42em; font-weight: 500;">CARSON</div>
+    <div style="width: 64px; height: 1px; background: #8C6A3F;"></div>
+    <div class="lbl" style="font-size: 9.5px; color: #6B6157;">Agra &middot; India</div>
+  </div>
+
+  <!-- SECONDARY MARKS -->
+  <div style="border-top: 1px solid rgba(23,20,15,0.14); padding-top: 22px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px;">
+    <div style="border: 1px solid rgba(23,20,15,0.18); height: 104px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px;">
+      <div class="ser" style="font-size: 34px; letter-spacing: 0.06em;">C</div>
+      <div class="lbl" style="font-size: 8px; color: #6B6157;">Monogram</div>
+    </div>
+    <div style="border: 1px solid rgba(23,20,15,0.18); height: 104px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 5px;">
+      <div class="ser" style="font-size: 19px; letter-spacing: 0.3em; text-indent: 0.3em;">CARSON</div>
+      <div class="lbl" style="font-size: 8px; color: #8C6A3F;">Est. Carson Overseas</div>
+    </div>
+  </div>
+
+  <!-- PALETTE -->
+  <div style="border-top: 1px solid rgba(23,20,15,0.14); padding-top: 22px;">
+    <div class="lbl" style="font-size: 10px; color: #6B6157; margin-bottom: 14px;">Palette</div>
+    <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px;">
+      <div style="display: flex; flex-direction: column; gap: 8px;">
+        <div style="height: 62px; background: #F3EFE7; border: 1px solid rgba(23,20,15,0.18);"></div>
+        <span class="lbl" style="font-size: 8.5px;">Bone</span><span style="font-size: 10px; color: #6B6157; margin-top: -6px;">#F3EFE7</span>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 8px;">
+        <div style="height: 62px; background: #17140F;"></div>
+        <span class="lbl" style="font-size: 8.5px;">Ink</span><span style="font-size: 10px; color: #6B6157; margin-top: -6px;">#17140F</span>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 8px;">
+        <div style="height: 62px; background: #B07C4F;"></div>
+        <span class="lbl" style="font-size: 8.5px;">Cognac</span><span style="font-size: 10px; color: #6B6157; margin-top: -6px;">#B07C4F</span>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 8px;">
+        <div style="height: 62px; background: #8C6A3F;"></div>
+        <span class="lbl" style="font-size: 8.5px;">Bronze</span><span style="font-size: 10px; color: #6B6157; margin-top: -6px;">#8C6A3F</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- TYPE -->
+  <div style="border-top: 1px solid rgba(23,20,15,0.14); padding-top: 22px; display: flex; flex-direction: column; gap: 14px;">
+    <div class="lbl" style="font-size: 10px; color: #6B6157;">Typography</div>
+    <div>
+      <div class="ser" style="font-size: 40px; line-height: 1.06;">Bodoni Moda</div>
+      <div class="lbl" style="font-size: 9px; color: #6B6157; margin-top: 7px;">Display &mdash; headlines, product names</div>
+    </div>
+    <div>
+      <div style="font-size: 15px; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 400;">Jost &mdash; Labels &amp; Body</div>
+      <div class="lbl" style="font-size: 9px; color: #6B6157; margin-top: 7px;">Navigation, specification, running text</div>
+    </div>
+  </div>
+
+  <!-- APPLICATION -->
+  <div style="border-top: 1px solid rgba(23,20,15,0.14); padding-top: 22px; flex-grow: 1; display: flex; flex-direction: column; gap: 12px;">
+    <div class="lbl" style="font-size: 10px; color: #6B6157;">Box Stamp</div>
+    <div style="flex-grow: 1; background: #17140F; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px;">
+      <div class="ser" style="font-size: 24px; letter-spacing: 0.42em; text-indent: 0.42em; color: #E7DFCF;">CARSON</div>
+      <div style="width: 40px; height: 1px; background: #8C6A3F;"></div>
+      <div class="lbl" style="font-size: 8.5px; color: rgba(231,223,207,0.62);">Made in Agra, India</div>
+    </div>
+  </div>
+
+</div>
+</x-dc>
+</body>
+</html>

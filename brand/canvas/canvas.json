@@ -1,0 +1,41 @@
+{
+  "artboards": [
+    { "file": "DirectionA.dc.html", "x": 0,    "y": 0,    "w": 1440, "h": 900, "title": "A · The House — homepage" },
+    { "file": "Main.dc.html",       "x": 1560, "y": 0,    "w": 1440, "h": 900, "title": "B · The Bench — homepage" },
+    { "file": "DirectionC.dc.html", "x": 3120, "y": 0,    "w": 1440, "h": 900, "title": "C · The Edit — homepage" },
+    { "file": "IdentityA.dc.html",  "x": 0,    "y": 1120, "w": 720,  "h": 900, "title": "A · Identity" },
+    { "file": "IdentityB.dc.html",  "x": 1560, "y": 1120, "w": 720,  "h": 900, "title": "B · Identity" },
+    { "file": "IdentityC.dc.html",  "x": 3120, "y": 1120, "w": 720,  "h": 900, "title": "C · Identity" }
+  ],
+  "annotations": [
+    {
+      "id": "dir-a",
+      "x": 0,
+      "y": -230,
+      "w": 470,
+      "text": "A — THE HOUSE\n\nSymmetrical, centred, bone and cognac. The grammar every established maison shares: thin rules, a Didone wordmark, the product in a generous frame.\n\nStrength: reads expensive instantly. Nobody has to be taught how to look at it.\n\nTradeoff: it is the most borrowed language in luxury. Safe, and therefore the least memorable of the three."
+    },
+    {
+      "id": "dir-b",
+      "x": 1560,
+      "y": -230,
+      "w": 470,
+      "text": "B — THE BENCH   (my recommendation)\n\nMaison polish plus a specification layer: brass leader lines pointing at real construction, mono lot numbers, the vocabulary of a workshop.\n\nStrength: it is the only one that could belong to Carson and no one else. The annotations point AT the shoe, so the type sells the product instead of competing with it — the 'product, not art project' test.\n\nTradeoff: the technical layer must stay disciplined. Overdo it and it turns into a diagram."
+    },
+    {
+      "id": "dir-c",
+      "x": 3120,
+      "y": -230,
+      "w": 470,
+      "text": "C — THE EDIT\n\nFashion editorial. Sand and oxblood, one heavy grotesk, the shoe rotated and breaking across the panel edge.\n\nStrength: the most contemporary and by far the most Instagram-native — this crops into a grid without any work.\n\nTradeoff: it reads fashion-season rather than permanent, and heavy grotesk at this scale is currently everywhere. It will date faster than A or B."
+    },
+    {
+      "id": "read-me",
+      "x": 1560,
+      "y": 2120,
+      "w": 470,
+      "text": "All three use the same drawn shoe so you are judging art direction, not photography. Real product shots replace it later.\n\nPrices show as [YOUR PRICE] — nothing invented.\n\nEvery claim on screen is one you confirmed: full-grain, hand-finished, made in Agra. Goodyear welt and vegetable-tanning are deliberately absent until you confirm them."
+    }
+  ],
+  "launch": { "view": "canvas" }
+}

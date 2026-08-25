@@ -1,0 +1,103 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=IBM+Plex+Mono:wght@400;500&family=Jost:wght@300;400&display=swap">
+  <style>
+    body { margin: 0; }
+    a { color: #B4924E; text-decoration: none; }
+    a:hover { color: #D9B978; }
+    .mono { font-family: 'IBM Plex Mono', Consolas, monospace; letter-spacing: 0.13em; text-transform: uppercase; }
+    .ser { font-family: 'Instrument Serif', 'Didot', Georgia, serif; font-weight: 400; }
+  </style>
+</helmet>
+
+<div style="width: 720px; height: 900px; background: #16181A; color: #E6E1D6; font-family: 'Jost', 'Futura', sans-serif; padding: 44px 48px; box-sizing: border-box; display: flex; flex-direction: column; gap: 24px; overflow: hidden;">
+
+  <div style="display: flex; justify-content: space-between; align-items: baseline;">
+    <span class="mono" style="font-size: 11px; color: #B4924E;">Direction B</span>
+    <span class="mono" style="font-size: 11px; color: #9A968C;">The Bench</span>
+  </div>
+
+  <!-- WORDMARK -->
+  <div style="border-top: 1px solid rgba(230,225,214,0.16); padding-top: 30px; display: flex; flex-direction: column; align-items: center; gap: 13px;">
+    <div class="ser" style="font-size: 52px; letter-spacing: 0.34em; text-indent: 0.34em;">CARSON</div>
+    <div style="display: flex; align-items: center; gap: 10px;">
+      <span style="width: 22px; height: 1px; background: #B4924E;"></span>
+      <span class="mono" style="font-size: 9px; color: #9A968C;">Lot 001</span>
+      <span style="width: 22px; height: 1px; background: #B4924E;"></span>
+    </div>
+  </div>
+
+  <!-- SECONDARY MARKS -->
+  <div style="border-top: 1px solid rgba(230,225,214,0.16); padding-top: 22px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px;">
+    <div style="border: 1px solid rgba(230,225,214,0.2); height: 104px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 7px;">
+      <div class="mono" style="font-size: 21px; font-weight: 500; color: #B4924E;">CO/25</div>
+      <div class="mono" style="font-size: 8px; color: #78746C;">Maker's stamp</div>
+    </div>
+    <div style="border: 1px solid rgba(230,225,214,0.2); height: 104px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px;">
+      <div class="ser" style="font-size: 20px; letter-spacing: 0.26em; text-indent: 0.26em;">CARSON</div>
+      <div class="mono" style="font-size: 8px; color: #78746C;">Agra, India</div>
+    </div>
+  </div>
+
+  <!-- PALETTE -->
+  <div style="border-top: 1px solid rgba(230,225,214,0.16); padding-top: 22px;">
+    <div class="mono" style="font-size: 10px; color: #78746C; margin-bottom: 14px;">Palette</div>
+    <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px;">
+      <div style="display: flex; flex-direction: column; gap: 8px;">
+        <div style="height: 62px; background: #16181A; border: 1px solid rgba(230,225,214,0.24);"></div>
+        <span class="mono" style="font-size: 8.5px;">Graphite</span><span class="mono" style="font-size: 9px; color: #78746C; margin-top: -6px;">#16181A</span>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 8px;">
+        <div style="height: 62px; background: #E6E1D6;"></div>
+        <span class="mono" style="font-size: 8.5px;">Bone</span><span class="mono" style="font-size: 9px; color: #78746C; margin-top: -6px;">#E6E1D6</span>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 8px;">
+        <div style="height: 62px; background: #B4924E;"></div>
+        <span class="mono" style="font-size: 8.5px;">Brass</span><span class="mono" style="font-size: 9px; color: #78746C; margin-top: -6px;">#B4924E</span>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 8px;">
+        <div style="height: 62px; background: #9A968C;"></div>
+        <span class="mono" style="font-size: 8.5px;">Ash</span><span class="mono" style="font-size: 9px; color: #78746C; margin-top: -6px;">#9A968C</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- TYPE -->
+  <div style="border-top: 1px solid rgba(230,225,214,0.16); padding-top: 22px; display: flex; flex-direction: column; gap: 14px;">
+    <div class="mono" style="font-size: 10px; color: #78746C;">Typography</div>
+    <div>
+      <div class="ser" style="font-size: 43px; line-height: 1.02;">Instrument Serif</div>
+      <div class="mono" style="font-size: 8.5px; color: #78746C; margin-top: 8px;">Display &mdash; the voice of the house</div>
+    </div>
+    <div>
+      <div class="mono" style="font-size: 14px; font-weight: 500;">IBM Plex Mono</div>
+      <div class="mono" style="font-size: 8.5px; color: #78746C; margin-top: 8px;">Specification &mdash; lots, materials, origin</div>
+    </div>
+  </div>
+
+  <!-- APPLICATION -->
+  <div style="border-top: 1px solid rgba(230,225,214,0.16); padding-top: 22px; flex-grow: 1; display: flex; flex-direction: column; gap: 12px;">
+    <div class="mono" style="font-size: 10px; color: #78746C;">Insole Stamp</div>
+    <div style="flex-grow: 1; background: #E6E1D6; color: #16181A; display: flex; align-items: center; justify-content: space-between; padding: 0 28px;">
+      <div style="display: flex; flex-direction: column; gap: 6px;">
+        <div class="ser" style="font-size: 25px; letter-spacing: 0.3em; text-indent: 0.3em;">CARSON</div>
+        <div class="mono" style="font-size: 8.5px; color: #55524B;">Made in Agra, India</div>
+      </div>
+      <div style="text-align: right; display: flex; flex-direction: column; gap: 5px;">
+        <div class="mono" style="font-size: 9px; color: #55524B;">Lot 001</div>
+        <div class="mono" style="font-size: 9px; color: #8A6F3B;">Full&#8209;grain</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</x-dc>
+</body>
+</html>
