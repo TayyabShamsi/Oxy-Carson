@@ -20,7 +20,7 @@ export default function CartDrawer() {
         className={`${s.panel} ${isOpen ? s.panelOpen : ""}`}
         aria-label="Shopping bag"
         aria-hidden={!isOpen}
-        {...(!isOpen ? { inert: "" as unknown as boolean } : {})}
+        {...(!isOpen ? { inert: true } : {})}
       >
         <div className={s.head}>
           <span className="label">

@@ -42,7 +42,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${display.variable} ${body.variable}`}>
+    <html lang="en" data-scroll-behavior="smooth" className={`${display.variable} ${body.variable}`}>
       <head>
         {/* Scroll reveals are a JS class toggle. Without JS the page must still
             render everything, or a crawler — or anyone on a flaky connection —

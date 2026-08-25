@@ -91,7 +91,7 @@ export default function Header() {
       <div
         className={`${s.sheet} ${menu ? s.sheetOpen : ""}`}
         aria-hidden={!menu}
-        {...(!menu ? { inert: "" as unknown as boolean } : {})}
+        {...(!menu ? { inert: true } : {})}
       >
         {[...NAV, ...NAV_RIGHT].map((item) => (
           <Link key={item.href} href={item.href} className={s.sheetLink}>
