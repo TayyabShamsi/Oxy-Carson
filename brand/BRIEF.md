@@ -148,6 +148,9 @@ or *"entirely hand-stitched"* — untrue at scale and indefensible when a custom
 - [ ] **Direction A, B or C** — blocks the build
 - [ ] **Instagram handle** — exists but needs fetching. *Founder asked to be reminded.*
 - [ ] **Domain** — none owned. Shortlist once the name is trademark-cleared.
+- [ ] **Brand-dedicated email and phone** — see §12; the site currently carries
+      the factory's trade line, which is the wrong front door for a retail
+      customer.
 - [ ] Trademark clearance on standalone "Carson" (§1)
 - [ ] Goodyear welt / vegetable-tan confirmation (§8)
 - [ ] Italian design house — name, and whether it may be referenced (§8)
@@ -155,3 +158,38 @@ or *"entirely hand-stitched"* — untrue at scale and indefensible when a custom
 - [ ] Hero silhouette: sneaker, or loafers-and-boots (§7)
 - [ ] Product names, colourways, prices
 - [ ] Product photography
+
+
+---
+
+## 12. Firm details — from public research
+
+Verified against public trade directories, 2026-08-25. Cross-checks the
+company profile PDF.
+
+| Field | Value |
+|---|---|
+| Firm | Carson Overseas |
+| Manufacturing division | M/s. Shoe Connect |
+| Established | **1995** — confirms the profile; corrects the "20–25 years" given verbally |
+| Address | B-9, 10 & 11, EPIP, Industrial Area, Shastripuram, Agra 282007, Uttar Pradesh |
+| Trade line | 0562-2640330 · +91 562 264 0330 |
+| Fax | 0562-2810815 |
+| GSTIN | 09AACFC1560B1Z1 |
+| Directory registration | 2011 (the listing, not the business) |
+| Stated export markets | Gulf, Australia, France, South Africa — wider than the profile lists |
+
+**What went on the site, and what did not.**
+
+- ✅ **Address** — on the contact page. It is genuine, already public, and it
+  backs up "Made in Agra" with something checkable.
+- ⚠️ **Phone** — on the contact page under *Wholesale only*. It reaches a
+  factory switchboard built for trade buyers. A retail customer who has just
+  spent £265 should not land there. **Get a brand-dedicated line before launch.**
+- ❌ **Email** — none found publicly; left bracketed rather than guessed.
+- ❌ **GSTIN, fax, turnover, directory listings** — deliberately omitted. They
+  belong on a B2B profile, not a consumer brand site.
+- ❌ **The legacy globe logo** — unusable (see §1).
+
+> The consumer brand is run by an individual partner, separate from the firm.
+> Nothing identifying that partner appears anywhere on the site or in this repo.

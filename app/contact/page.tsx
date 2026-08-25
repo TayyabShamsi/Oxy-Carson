@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Reveal from "@/components/site/Reveal";
 import Bar from "@/components/site/Bar";
+import s from "./contact.module.css";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -8,26 +9,35 @@ export const metadata: Metadata = {
 };
 
 /**
- * ⚠️ Every bracketed value below is a placeholder. Nothing here was supplied,
- *    so nothing here was invented. Replace before launch.
+ * The workshop address and line are the real, publicly listed details of the
+ * manufacturing firm in Agra. They are here because they are true, and because
+ * they back up what the rest of the site claims about where these are made.
+ *
+ * ⚠️ Anything still [BRACKETED] was not supplied and was not invented.
+ *
+ * ⚠️ Before launch, get a BRAND-dedicated email and phone line. The number
+ *    below reaches a factory switchboard set up for trade buyers, not a
+ *    customer who has just spent £300 on a pair of boots.
  */
 const BLOCKS = [
   {
-    numeral: "I",
     head: "Enquiries",
-    lines: ["[EMAIL ADDRESS]", "[PHONE NUMBER]"],
+    lines: ["[BRAND EMAIL ADDRESS]"],
     note: "We answer within two working days.",
   },
   {
-    numeral: "II",
     head: "Wholesale",
-    lines: ["[WHOLESALE EMAIL]"],
+    lines: ["[WHOLESALE EMAIL]", "+91 562 264 0330"],
     note: "Line sheets and terms on request. We have supplied international buyers since 1995.",
   },
   {
-    numeral: "III",
     head: "The workshop",
-    lines: ["Carson", "[STREET ADDRESS]", "Agra, Uttar Pradesh", "India"],
+    lines: [
+      "B-9, 10 & 11, EPIP",
+      "Industrial Area, Shastripuram",
+      "Agra 282007",
+      "Uttar Pradesh, India",
+    ],
     note: "Visits by appointment.",
   },
 ];
@@ -50,49 +60,33 @@ const POLICIES = [
 export default function ContactPage() {
   return (
     <div className="shell">
-      <section
-        style={{
-          textAlign: "center",
-          paddingBlock: "clamp(34px, 5vw, 72px) clamp(28px, 4vw, 48px)",
-        }}
-      >
-        <p className="label muted">Contact</p>
-        <h1 className="display display-xl" style={{ marginTop: 12 }}>
-          Talk to the workshop
+      <section className={s.head}>
+        <h1 className="display display-xl">
+          Talk to the<br />workshop
         </h1>
-        <p
-          className="lede"
-          style={{ maxWidth: 470, marginInline: "auto", marginTop: 18 }}
-        >
-          There is no call centre between you and the people who make these. Write,
-          and someone who has held the shoe will answer.
+        <p className="lede">
+          There is no call centre between you and the people who make these.
+          Write, and someone who has held the shoe will answer.
         </p>
       </section>
 
-      <Bar weight="xs" />
+      <Bar weight="md" />
 
-      <section
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(230px, 1fr))",
-          gap: "clamp(28px, 4vw, 56px)",
-          paddingBlock: "clamp(40px, 5vw, 68px)",
-        }}
-      >
+      <section className={s.blocks}>
         {BLOCKS.map((block, i) => (
-          <Reveal key={block.head} delay={i * 90}>
-            <span className="label muted">{block.numeral}</span>
-            <h2 className="display display-s" style={{ marginTop: 10 }}>
+          <Reveal key={block.head} delay={i * 80}>
+            <Bar weight="xs" animate={false} />
+            <h2 className="display display-s" style={{ marginTop: 18 }}>
               {block.head}
             </h2>
-            <div style={{ marginTop: 14, display: "flex", flexDirection: "column", gap: 4 }}>
+            <div className={s.lines}>
               {block.lines.map((line) => (
                 <span key={line} className="body" style={{ fontSize: "0.9375rem" }}>
                   {line}
                 </span>
               ))}
             </div>
-            <p className="label muted" style={{ marginTop: 14 }}>
+            <p className="label muted" style={{ marginTop: 16 }}>
               {block.note}
             </p>
           </Reveal>
@@ -101,16 +95,9 @@ export default function ContactPage() {
 
       <Bar weight="xs" />
 
-      <section
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
-          gap: "clamp(28px, 4vw, 56px)",
-          paddingBlock: "clamp(44px, 5vw, 72px) clamp(64px, 8vw, 110px)",
-        }}
-      >
+      <section className={s.policies}>
         {POLICIES.map((policy, i) => (
-          <Reveal key={policy.head} delay={i * 90}>
+          <Reveal key={policy.head} delay={i * 80}>
             <h2 className="label">{policy.head}</h2>
             <p className="body" style={{ marginTop: 12, fontSize: "0.9375rem" }}>
               {policy.body}
