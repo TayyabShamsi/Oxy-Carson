@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import MaskHeading from "@/components/site/MaskHeading";
 import Reveal from "@/components/site/Reveal";
-import Rule from "@/components/site/Rule";
+import Bar from "@/components/site/Bar";
 import s from "./workshop.module.css";
 
 export const metadata: Metadata = {
@@ -57,7 +57,7 @@ export default function WorkshopPage() {
   return (
     <>
       <section className={`shell ${s.hero}`}>
-        <p className="numeral">The Workshop</p>
+        <p className="label muted">The Workshop</p>
         <MaskHeading
           className="display display-xl"
           lines={["Thirty years", "on the same bench."]}
@@ -72,7 +72,7 @@ export default function WorkshopPage() {
       </section>
 
       <div className="shell">
-        <Rule />
+        <Bar weight="xs" />
       </div>
 
       <section className="shell section-tight">
@@ -100,7 +100,7 @@ export default function WorkshopPage() {
       </Reveal>
 
       <div className="shell">
-        <Rule />
+        <Bar weight="xs" />
         <div className={s.stats}>
           {STATS.map((stat, i) => (
             <Reveal key={stat.label} delay={i * 80}>
@@ -109,7 +109,7 @@ export default function WorkshopPage() {
             </Reveal>
           ))}
         </div>
-        <Rule />
+        <Bar weight="xs" />
       </div>
 
       <section className="shell section">
@@ -117,7 +117,7 @@ export default function WorkshopPage() {
           {CHAPTERS.map((chapter, i) => (
             <Reveal key={chapter.numeral} delay={i * 60} className={s.chapter}>
               <div className={s.chapterHead}>
-                <span className="numeral">{chapter.numeral}</span>
+                <span className="label muted">{chapter.numeral}</span>
                 <h2 className="display display-m">{chapter.title}</h2>
               </div>
               <div className={`body ${s.chapterBody}`}>
@@ -133,7 +133,7 @@ export default function WorkshopPage() {
       <section className={s.agra}>
         <div className="shell section">
           <Reveal className={s.agraInner}>
-            <p className="numeral">Agra, India</p>
+            <p className="label muted">Agra, India</p>
             <h2 className="display display-l" style={{ marginTop: 14 }}>
               Where the shoes are made
             </h2>

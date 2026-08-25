@@ -33,7 +33,7 @@ export default function Footer() {
     <footer className={s.footer}>
       <div className="shell">
         <div className={s.waitlist}>
-          <p className="numeral">First Release</p>
+          <p className="label muted">First Release</p>
           <h2 className="display display-m" style={{ marginTop: 14 }}>
             Be told before anyone else.
           </h2>

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Reveal from "@/components/site/Reveal";
-import Rule from "@/components/site/Rule";
+import Bar from "@/components/site/Bar";
 import { SIZES } from "@/lib/products";
 
 export const metadata: Metadata = {
@@ -42,7 +42,7 @@ export default function CarePage() {
           paddingBlock: "clamp(34px, 5vw, 72px) clamp(28px, 4vw, 48px)",
         }}
       >
-        <p className="numeral">Sizing &amp; Care</p>
+        <p className="label muted">Sizing &amp; Care</p>
         <h1 className="display display-xl" style={{ marginTop: 12 }}>
           Made to be kept
         </h1>
@@ -55,7 +55,7 @@ export default function CarePage() {
         </p>
       </section>
 
-      <Rule />
+      <Bar weight="xs" />
 
       {/* ------------------------------------------------------------- sizing */}
       <section className="section-tight">
@@ -87,7 +87,7 @@ export default function CarePage() {
                     style={{
                       textAlign: "left",
                       paddingBlock: 12,
-                      borderBottom: "1px solid var(--rule-strong)",
+                      borderBottom: "1px solid var(--ink)",
                       fontWeight: 400,
                     }}
                   >
@@ -99,7 +99,7 @@ export default function CarePage() {
                       className="label"
                       style={{
                         paddingBlock: 12,
-                        borderBottom: "1px solid var(--rule-strong)",
+                        borderBottom: "1px solid var(--ink)",
                         fontWeight: 400,
                       }}
                     >
@@ -112,7 +112,7 @@ export default function CarePage() {
                 <tr>
                   <td
                     className="label muted"
-                    style={{ paddingBlock: 14, borderBottom: "1px solid var(--rule)" }}
+                    style={{ paddingBlock: 14, borderBottom: "1px solid var(--hair)" }}
                   >
                     EU
                   </td>
@@ -123,7 +123,7 @@ export default function CarePage() {
                       style={{
                         textAlign: "center",
                         paddingBlock: 14,
-                        borderBottom: "1px solid var(--rule)",
+                        borderBottom: "1px solid var(--hair)",
                       }}
                     >
                       {s.eu}
@@ -150,13 +150,13 @@ export default function CarePage() {
         </Reveal>
       </section>
 
-      <Rule />
+      <Bar weight="xs" />
 
       {/* --------------------------------------------------------------- care */}
       <section className="section">
         <Reveal>
           <div style={{ textAlign: "center", marginBottom: "clamp(34px, 4vw, 54px)" }}>
-            <p className="numeral">Care</p>
+            <p className="label muted">Care</p>
             <h2 className="display display-l" style={{ marginTop: 12 }}>
               Four habits
             </h2>
@@ -172,7 +172,7 @@ export default function CarePage() {
         >
           {CARE.map((item, i) => (
             <Reveal key={item.numeral} delay={i * 90}>
-              <span className="numeral">{item.numeral}</span>
+              <span className="label muted">{item.numeral}</span>
               <h3 className="display display-s" style={{ marginTop: 10 }}>
                 {item.title}
               </h3>

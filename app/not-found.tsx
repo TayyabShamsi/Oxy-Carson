@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Rule from "@/components/site/Rule";
+import Bar from "@/components/site/Bar";
 
 export default function NotFound() {
   return (
@@ -11,7 +11,7 @@ export default function NotFound() {
         maxWidth: 560,
       }}
     >
-      <p className="numeral">404</p>
+      <p className="label muted">404</p>
       <h1 className="display display-l" style={{ marginTop: 14 }}>
         Nothing on this last
       </h1>
@@ -20,7 +20,7 @@ export default function NotFound() {
         never have existed.
       </p>
       <div style={{ marginTop: 34 }}>
-        <Rule />
+        <Bar weight="xs" />
       </div>
       <div style={{ marginTop: 34 }}>
         <Link href="/collection" className="btn label">

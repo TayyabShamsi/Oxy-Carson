@@ -3,15 +3,16 @@
   top: 0;
   z-index: 60;
   background: transparent;
-  transition: background var(--dur-fast) var(--ease-soft),
-    box-shadow var(--dur-fast) var(--ease-soft);
+  transition: background var(--ui) var(--ease-out),
+    box-shadow var(--ui) var(--ease-out);
 }
 
 .stuck {
-  background: color-mix(in srgb, var(--bone) 88%, transparent);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  box-shadow: 0 1px 0 var(--rule);
+  /* Opaque, not translucent. A blurred header lets whatever is behind it
+     ghost through — the hero's white sole, or the black story section
+     rendering as a grey band across the top. */
+  background: var(--paper);
+  box-shadow: 0 1px 0 var(--hair);
 }
 
 .inner {
@@ -35,7 +36,7 @@
   color: var(--ink-soft);
   position: relative;
   padding-bottom: 3px;
-  transition: color var(--dur-fast) var(--ease-soft);
+  transition: color var(--ui) var(--ease-out);
 }
 
 .navLink::after {
@@ -45,8 +46,8 @@
   right: 100%;
   bottom: 0;
   height: 1px;
-  background: var(--bronze);
-  transition: right var(--dur-fast) var(--ease);
+  background: var(--ink);
+  transition: right var(--ui) var(--ease-narrative);
 }
 
 .navLink:hover {
@@ -96,7 +97,7 @@
   right: 0;
   height: 1px;
   background: var(--ink);
-  transition: transform var(--dur-fast) var(--ease), opacity 160ms linear;
+  transition: transform var(--ui) var(--ease-narrative), opacity 160ms linear;
 }
 
 .burger span:nth-child(1) {
@@ -125,7 +126,7 @@
   position: fixed;
   inset: 0;
   top: 0;
-  background: var(--bone);
+  background: var(--paper);
   z-index: 55;
   padding: 110px var(--gutter) var(--gutter);
   display: flex;
@@ -134,8 +135,8 @@
   opacity: 0;
   pointer-events: none;
   transform: translateY(-8px);
-  transition: opacity var(--dur-fast) var(--ease-soft),
-    transform var(--dur-fast) var(--ease);
+  transition: opacity var(--ui) var(--ease-out),
+    transform var(--ui) var(--ease-narrative);
 }
 
 .sheetOpen {
@@ -148,7 +149,7 @@
   font-family: var(--font-display), Georgia, serif;
   font-size: 2rem;
   padding-block: 14px;
-  border-bottom: 1px solid var(--rule);
+  border-bottom: 1px solid var(--hair);
 }
 
 @media (max-width: 860px) {

@@ -2,35 +2,46 @@
   display: block;
 }
 
+/* The plate is cream — the one place warmth is allowed to sit under a shoe. */
 .frame {
   position: relative;
-  background: var(--bone-deep);
-  padding: clamp(26px, 3vw, 44px) clamp(16px, 2vw, 30px);
+  background: var(--cream);
+  padding: clamp(30px, 3.4vw, 56px) clamp(20px, 2.4vw, 44px);
   display: flex;
   align-items: center;
   justify-content: center;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 16 / 11;
   overflow: hidden;
-  transition: background var(--dur) var(--ease-soft);
 }
 
-.card:hover .frame {
-  background: var(--bone-warm);
+/* The plate's own bar. The shoe sits above it, so the shoe breaks it —
+   the same device as the hero, at a quieter weight. */
+.plateBar {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 58%;
+  height: clamp(26px, 3vw, 42px);
+  background: var(--ink);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform var(--narrative) var(--ease-narrative);
+}
+
+.card:hover .plateBar,
+.frame:focus-within .plateBar {
+  transform: scaleX(1);
 }
 
 .art {
+  position: relative;
+  z-index: 2;
   width: 100%;
-  transition: transform 900ms var(--ease);
+  transition: transform var(--ui-slow) var(--ease-out);
 }
 
 .card:hover .art {
-  transform: translateY(-8px) scale(1.025);
-}
-
-.corner {
-  position: absolute;
-  top: 16px;
-  left: 18px;
+  transform: translateY(-6px);
 }
 
 .meta {
@@ -38,13 +49,14 @@
   justify-content: space-between;
   align-items: baseline;
   gap: 16px;
-  margin-top: 18px;
+  margin-top: 20px;
 }
 
 .name {
   font-family: var(--font-display), Georgia, serif;
-  font-size: 1.1875rem;
-  line-height: 1.2;
+  font-size: clamp(1.25rem, 1.7vw, 1.5rem);
+  line-height: 1.14;
+  letter-spacing: -0.02em;
 }
 
 .price {
@@ -55,19 +67,19 @@
 }
 
 .tagline {
-  margin-top: 5px;
+  margin-top: 7px;
   color: var(--ink-mute);
 }
 
 .swatches {
   display: flex;
-  gap: 7px;
-  margin-top: 14px;
+  gap: 8px;
+  margin-top: 16px;
 }
 
 .swatch {
-  width: 11px;
-  height: 11px;
+  width: 12px;
+  height: 12px;
   border-radius: 50%;
-  box-shadow: inset 0 0 0 1px rgba(23, 20, 15, 0.16);
+  box-shadow: inset 0 0 0 1px rgba(13, 12, 10, 0.18);
 }

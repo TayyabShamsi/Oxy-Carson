@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import ProductDetail from "@/components/product/ProductDetail";
 import ProductCard from "@/components/product/ProductCard";
 import Reveal from "@/components/site/Reveal";
-import Rule from "@/components/site/Rule";
+import Bar from "@/components/site/Bar";
 import { getProduct, products } from "@/lib/products";
 
 export function generateStaticParams() {
@@ -49,7 +49,7 @@ export default async function ProductPage({
       <ProductDetail product={product} />
 
       <section className="shell" style={{ paddingBottom: "clamp(64px, 8vw, 112px)" }}>
-        <Rule />
+        <Bar weight="xs" />
         <h2
           className="label muted"
           style={{ textAlign: "center", marginBlock: "26px 34px" }}

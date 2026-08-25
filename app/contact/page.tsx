@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Reveal from "@/components/site/Reveal";
-import Rule from "@/components/site/Rule";
+import Bar from "@/components/site/Bar";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -56,7 +56,7 @@ export default function ContactPage() {
           paddingBlock: "clamp(34px, 5vw, 72px) clamp(28px, 4vw, 48px)",
         }}
       >
-        <p className="numeral">Contact</p>
+        <p className="label muted">Contact</p>
         <h1 className="display display-xl" style={{ marginTop: 12 }}>
           Talk to the workshop
         </h1>
@@ -69,7 +69,7 @@ export default function ContactPage() {
         </p>
       </section>
 
-      <Rule />
+      <Bar weight="xs" />
 
       <section
         style={{
@@ -81,7 +81,7 @@ export default function ContactPage() {
       >
         {BLOCKS.map((block, i) => (
           <Reveal key={block.head} delay={i * 90}>
-            <span className="numeral">{block.numeral}</span>
+            <span className="label muted">{block.numeral}</span>
             <h2 className="display display-s" style={{ marginTop: 10 }}>
               {block.head}
             </h2>
@@ -99,7 +99,7 @@ export default function ContactPage() {
         ))}
       </section>
 
-      <Rule />
+      <Bar weight="xs" />
 
       <section
         style={{

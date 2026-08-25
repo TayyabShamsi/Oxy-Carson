@@ -3,25 +3,20 @@ import ShoeArt from "./ShoeArt";
 import { formatPrice, type Product } from "@/lib/products";
 import s from "./ProductCard.module.css";
 
-export default function ProductCard({
-  product,
-  index,
-}: {
-  product: Product;
-  index?: number;
-}) {
+export default function ProductCard({ product }: { product: Product }) {
   const lead = product.colorways[0];
 
   return (
     <Link href={`/product/${product.slug}`} className={s.card}>
       <div className={s.frame}>
-        {typeof index === "number" && (
-          <span className={`numeral ${s.corner}`}>
-            {String(index + 1).padStart(2, "0")}
-          </span>
-        )}
+        <div className={s.plateBar} aria-hidden="true" />
         <div className={s.art}>
-          <ShoeArt art={product.art} colorway={lead} title={`${product.name} in ${lead.name}`} />
+          <ShoeArt
+            art={product.art}
+            colorway={lead}
+            title={`${product.name} in ${lead.name}`}
+            shadow={false}
+          />
         </div>
       </div>
 

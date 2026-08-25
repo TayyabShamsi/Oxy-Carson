@@ -1,44 +1,87 @@
 /* ==========================================================================
    CARSON — design system
-   Direction A ("The House"), with the signature detail described in §Signature.
+
+   §Ground
+   -------
+   Primary ground is OFF-WHITE, not cream. Cream is demoted to a secondary
+   surface: product plates, alternating sections, the odd inset. Two reasons.
+   Off-white reads colder, sharper and more expensive next to a true black —
+   the contrast is what carries the page. And a warm-cream ground with a serif
+   display and a tan accent is the most crowded look in this category; keeping
+   cream as an accent surface rather than the field gets the warmth without
+   the cliché.
+
+   §Signature — the bar
+   --------------------
+   Solid black bars, full-bleed, at four deliberate weights, cutting the page
+   at irregular intervals. Content hangs off them. They are sparse on purpose:
+   not a texture, not a repeating pattern — each one marks a real transition,
+   so the page reads as architecture rather than decoration.
+
+   The moment the design turns on: THE PRODUCT BREAKS THE BAR. A solid black
+   band runs behind the shoe at its midline and the shoe crosses it. Nothing
+   else on the page is allowed to do that.
+
+   §Motion
+   -------
+   Two speeds, and the distinction matters more than either value.
+   INTERFACE motion — hover, press, open, close — runs 150–260ms on ease-out.
+   Anything slower feels broken to a hand that is already moving.
+   NARRATIVE motion — the hero, scroll reveals, a bar drawing itself across —
+   runs 700–1100ms, because it is being watched rather than operated.
+   Only transform and opacity are ever animated. Motion is origin-aware: a
+   thing enters from where it came from.
+
+   Single theme by choice. This is a brand's own paper; it does not follow a
+   viewer's dark mode, so every colour is painted explicitly and no
+   prefers-color-scheme block exists.
    ========================================================================== */
 
 :root {
-  /* --- Surface ------------------------------------------------------------ */
-  --bone: #f3efe7;
-  --bone-deep: #ebe5da;
-  --bone-warm: #e6dfd2;
-  --ink: #17140f;
-  --ink-soft: #4a423a;
-  --ink-mute: #6b6157;
-  --ink-faint: #9a9188;
+  /* --- Ground ------------------------------------------------------------- */
+  --paper: #fbfaf8;
+  --paper-edge: #f2f0eb;
 
-  /* --- Accent ------------------------------------------------------------- */
-  --cognac: #b07c4f;
-  --bronze: #8c6a3f;
-  --bronze-deep: #5e4526;
+  /* --- Cream, now a surface rather than the field ------------------------- */
+  --cream: #efe9de;
+  --cream-deep: #e4ddcf;
+
+  /* --- Ink ----------------------------------------------------------------
+     Warm-biased black: it leans to the paper, never to blue. */
+  --ink: #0d0c0a;
+  --ink-soft: #423d37;
+  --ink-mute: #6b635a;
+  --ink-faint: #9c948a;
+
+  /* --- Accent -------------------------------------------------------------
+     Cognac is leather. It appears on product and almost nowhere else. */
+  --cognac: #a8703f;
 
   /* --- Lines -------------------------------------------------------------- */
-  --rule: rgba(23, 20, 15, 0.13);
-  --rule-strong: rgba(23, 20, 15, 0.26);
-  --rule-faint: rgba(23, 20, 15, 0.07);
+  --hair: rgba(13, 12, 10, 0.14);
+  --hair-faint: rgba(13, 12, 10, 0.07);
 
   /* --- Metrics ------------------------------------------------------------ */
-  --gutter: 56px;
-  --max: 1440px;
-  --measure: 60ch;
+  --gutter: 48px;
+  --max: 1560px;
+  --nav-h: 76px;
 
-  /* --- Motion -------------------------------------------------------------
-     Luxury motion is slow and weighted. Nothing bounces. Nothing springs. */
-  --ease: cubic-bezier(0.16, 1, 0.3, 1);
-  --ease-soft: cubic-bezier(0.33, 1, 0.68, 1);
-  --dur: 900ms;
-  --dur-fast: 420ms;
+  /* --- Motion ------------------------------------------------------------- */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-narrative: cubic-bezier(0.16, 1, 0.3, 1);
+
+  --ui: 180ms;
+  --ui-slow: 260ms;
+  --enter: 420ms;
+  --narrative: 820ms;
+  --narrative-long: 1100ms;
 }
 
 @media (max-width: 900px) {
   :root {
-    --gutter: 24px;
+    --gutter: 20px;
+    --nav-h: 62px;
   }
 }
 
@@ -57,7 +100,7 @@ html {
 
 body {
   margin: 0;
-  background: var(--bone);
+  background: var(--paper);
   color: var(--ink);
   font-family: var(--font-body), "Futura", "Century Gothic", sans-serif;
   font-weight: 300;
@@ -113,78 +156,123 @@ a {
 }
 
 :focus-visible {
-  outline: 1px solid var(--bronze);
+  outline: 2px solid var(--ink);
   outline-offset: 3px;
 }
 
-/* --- Typography ----------------------------------------------------------- */
+/* --- Typography -----------------------------------------------------------
+   The display face is allowed to get very large and very tight. That scale
+   does as much work as the bars do. */
 
 .display {
   font-family: var(--font-display), "Didot", "Bodoni MT", Georgia, serif;
   font-weight: 400;
-  letter-spacing: -0.012em;
-  line-height: 1.03;
-  text-wrap: pretty;
+  letter-spacing: -0.022em;
+  line-height: 0.94;
+  text-wrap: balance;
+}
+
+.display-hero {
+  font-size: clamp(2.7rem, 8.4vw, 7.3rem);
+  line-height: 0.87;
+  letter-spacing: -0.034em;
 }
 
 .display-xl {
-  font-size: clamp(2.9rem, 7.1vw, 5.05rem);
+  font-size: clamp(2.5rem, 6vw, 4.6rem);
+  line-height: 0.9;
+  letter-spacing: -0.028em;
 }
 .display-l {
-  font-size: clamp(2.3rem, 4.9vw, 3.5rem);
+  font-size: clamp(2rem, 4.2vw, 3.2rem);
+  letter-spacing: -0.024em;
 }
 .display-m {
-  font-size: clamp(1.7rem, 3vw, 2.3rem);
+  font-size: clamp(1.55rem, 2.7vw, 2.1rem);
+  line-height: 1.04;
 }
 .display-s {
-  font-size: clamp(1.25rem, 1.9vw, 1.5rem);
+  font-size: clamp(1.15rem, 1.7vw, 1.4rem);
+  line-height: 1.16;
 }
 
-/* The letterspaced small-caps label. Used everywhere: nav, eyebrows, buttons. */
 .label {
   font-family: var(--font-body), "Futura", sans-serif;
   font-weight: 400;
   text-transform: uppercase;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.2em;
   font-size: 0.6875rem;
   line-height: 1.4;
 }
 
-.label-lg {
-  letter-spacing: 0.16em;
-  font-size: 0.78rem;
+.label-sm {
+  font-size: 0.625rem;
+  letter-spacing: 0.22em;
 }
 
 .lede {
-  font-size: clamp(1rem, 1.25vw, 1.0625rem);
-  line-height: 1.72;
+  font-size: clamp(1rem, 1.15vw, 1.0938rem);
+  line-height: 1.64;
   color: var(--ink-soft);
   font-weight: 300;
+  max-width: 46ch;
 }
 
 .body {
   font-size: 0.9688rem;
-  line-height: 1.78;
+  line-height: 1.76;
   color: var(--ink-soft);
   font-weight: 300;
+  max-width: 62ch;
 }
 
 .muted {
   color: var(--ink-mute);
 }
 
-.bronze {
-  color: var(--bronze);
+/* ==========================================================================
+   §Signature — the bar
+   ========================================================================== */
+
+.bar {
+  width: 100%;
+  background: var(--ink);
+  flex-shrink: 0;
 }
 
-/* Numerals set in bronze — see §Signature. */
-.numeral {
-  font-family: var(--font-body), sans-serif;
-  font-weight: 400;
-  letter-spacing: 0.26em;
-  font-size: 0.625rem;
-  color: var(--bronze);
-  text-transform: uppercase;
+.bar-hair {
+  height: 1px;
+  background: var(--hair);
+}
+
+.bar-xs {
+  height: 2px;
+}
+.bar-sm {
+  height: 5px;
+}
+.bar-md {
+  height: 9px;
+}
+.bar-lg {
+  height: 15px;
+}
+
+/* A bar draws itself across from the left. Narrative speed — it is watched. */
+.bar-anim {
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform var(--narrative-long) var(--ease-narrative);
+}
+
+.bar-anim.is-in {
+  transform: scaleX(1);
+}
+
+/* Full-bleed out of a padded container. */
+.bleed {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
 }
 
 /* --- Layout --------------------------------------------------------------- */
@@ -197,118 +285,60 @@ a {
 }
 
 .section {
-  padding-block: clamp(72px, 9vw, 132px);
+  padding-block: clamp(64px, 8vw, 128px);
 }
 
 .section-tight {
-  padding-block: clamp(52px, 6vw, 84px);
+  padding-block: clamp(44px, 5vw, 76px);
 }
 
-.center {
-  text-align: center;
+.on-cream {
+  background: var(--cream);
 }
 
-.stack {
-  display: flex;
-  flex-direction: column;
+/* An inverted block. Used once, for the argument. */
+.inverted {
+  background: var(--ink);
+  color: var(--paper);
 }
 
-/* ==========================================================================
-   §Signature — the Rule & Tick
-
-   Direction A's frame is the shared grammar of every established house:
-   symmetry, hairlines, a letterspaced wordmark. That grammar is beautiful and
-   borrowed. The one thing that is ours is what happens AT the hairline.
-
-   Every structural rule on this site carries a single bronze tick at its
-   centre — the mark a maker scores on a last before cutting. It is small
-   enough to be subliminal and consistent enough to be recognised. It is the
-   only ornament in the entire system.
-   ========================================================================== */
-
-.rule {
-  position: relative;
-  height: 1px;
-  background: var(--rule);
-  width: 100%;
+.inverted .body,
+.inverted .lede {
+  color: rgba(251, 250, 248, 0.7);
 }
 
-.rule::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  width: 1px;
-  height: 9px;
-  background: var(--bronze);
-  transform: translate(-50%, -50%);
+.inverted .muted {
+  color: rgba(251, 250, 248, 0.52);
 }
 
-.rule-plain::after {
-  display: none;
-}
-
-.rule-start::after {
-  left: 0;
-  transform: translate(0, -50%);
-}
-
-/* The rule draws itself outward from the centre; the tick lands afterwards. */
-.rule-anim {
-  transform: scaleX(0);
-  transform-origin: center;
-  transition: transform 1100ms var(--ease);
-}
-
-.rule-anim.is-in {
-  transform: scaleX(1);
-}
-
-.rule-anim::after {
-  opacity: 0;
-  transition: opacity 420ms linear 680ms;
-}
-
-.rule-anim.is-in::after {
-  opacity: 1;
-}
-
-/* --- Controls ------------------------------------------------------------- */
+/* --- Controls -------------------------------------------------------------
+   Interface speed. A control that takes 900ms to acknowledge a hover feels
+   broken; these all land inside 260ms. */
 
 .link-underline {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  padding-bottom: 7px;
-  border-bottom: 1px solid var(--ink);
-  transition: border-color var(--dur-fast) var(--ease-soft),
-    color var(--dur-fast) var(--ease-soft);
-}
-
-.link-underline svg {
-  transition: transform var(--dur-fast) var(--ease);
+  padding-bottom: 6px;
+  border-bottom: 2px solid currentColor;
+  transition: gap var(--ui) var(--ease-out);
 }
 
 .link-underline:hover {
-  color: var(--bronze-deep);
-  border-color: var(--bronze);
-}
-
-.link-underline:hover svg {
-  transform: translateX(4px);
+  gap: 16px;
 }
 
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 11px;
-  padding: 17px 30px;
+  gap: 12px;
+  padding: 18px 32px;
   background: var(--ink);
-  color: var(--bone);
-  border: 1px solid var(--ink);
-  transition: background var(--dur-fast) var(--ease-soft),
-    color var(--dur-fast) var(--ease-soft);
+  color: var(--paper);
+  border: 2px solid var(--ink);
+  transition: background var(--ui) var(--ease-out),
+    color var(--ui) var(--ease-out);
 }
 
 .btn:hover {
@@ -316,33 +346,34 @@ a {
   color: var(--ink);
 }
 
+.btn:active {
+  transform: translateY(1px);
+}
+
 .btn:disabled {
-  opacity: 0.42;
+  opacity: 0.34;
   cursor: not-allowed;
 }
 
-.btn-ghost {
-  background: transparent;
+.btn-invert {
+  background: var(--paper);
   color: var(--ink);
-  border-color: var(--rule-strong);
+  border-color: var(--paper);
 }
 
-.btn-ghost:hover {
-  background: var(--ink);
-  color: var(--bone);
-  border-color: var(--ink);
+.btn-invert:hover {
+  background: transparent;
+  color: var(--paper);
 }
 
-/* --- Motion --------------------------------------------------------------
-   One orchestrated reveal, used everywhere. Slow, upward, never bouncy.
-   ------------------------------------------------------------------------- */
+/* --- Motion --------------------------------------------------------------- */
 
 .reveal {
   opacity: 0;
-  transform: translateY(16px);
-  transition: opacity var(--dur) var(--ease), transform var(--dur) var(--ease);
+  transform: translateY(18px);
+  transition: opacity var(--narrative) var(--ease-narrative),
+    transform var(--narrative) var(--ease-narrative);
   transition-delay: var(--reveal-delay, 0ms);
-  will-change: opacity, transform;
 }
 
 .reveal.is-in {
@@ -350,7 +381,6 @@ a {
   transform: none;
 }
 
-/* The headline mask reveal: each line rides up from behind a clipped edge. */
 .line-mask {
   display: block;
   overflow: hidden;
@@ -358,8 +388,8 @@ a {
 
 .line-mask > span {
   display: block;
-  transform: translateY(105%);
-  transition: transform 1150ms var(--ease);
+  transform: translateY(106%);
+  transition: transform var(--narrative-long) var(--ease-narrative);
   transition-delay: var(--reveal-delay, 0ms);
 }
 
@@ -375,14 +405,13 @@ a {
 
   .reveal,
   .line-mask > span,
-  .rule-anim,
-  .rule-anim::after {
+  .bar-anim {
     opacity: 1 !important;
     transform: none !important;
     transition: none !important;
   }
 
-  .rule-anim {
+  .bar-anim {
     transform: scaleX(1) !important;
   }
 
@@ -411,4 +440,8 @@ a {
 .scroll-x {
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
+}
+
+.tnum {
+  font-variant-numeric: tabular-nums;
 }

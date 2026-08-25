@@ -69,7 +69,7 @@ export default function ProductDetail({ product }: { product: Product }) {
       {/* ------------------------------------------------------------ gallery */}
       <div className={s.gallery}>
         <div className={s.stage}>
-          <span className={`numeral ${s.stageTag}`}>{product.category}</span>
+          <span className={`label muted ${s.stageTag}`}>{product.category}</span>
           <div className={s.stageArt} key={colorway.id}>
             <ShoeArt
               art={product.art}
@@ -83,7 +83,7 @@ export default function ProductDetail({ product }: { product: Product }) {
 
       {/* --------------------------------------------------------------- info */}
       <div className={s.info}>
-        <p className="numeral">{product.tagline}</p>
+        <p className="label muted">{product.tagline}</p>
         <h1 className={`display display-l ${s.name}`}>{product.name}</h1>
 
         <div className={s.priceRow}>

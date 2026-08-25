@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Reveal from "@/components/site/Reveal";
-import Rule from "@/components/site/Rule";
+import Bar from "@/components/site/Bar";
 import ProductCard from "@/components/product/ProductCard";
 import { CATEGORIES, products, type Category } from "@/lib/products";
 import s from "./collection.module.css";
@@ -28,7 +28,7 @@ export default async function CollectionPage({
   return (
     <div className="shell">
       <section className={s.head}>
-        <p className="numeral">The Collection</p>
+        <p className="label muted">The Collection</p>
         <h1 className="display display-xl" style={{ marginTop: 12 }}>
           Everything we make
         </h1>
@@ -38,7 +38,7 @@ export default async function CollectionPage({
         </p>
       </section>
 
-      <Rule />
+      <Bar weight="xs" />
 
       <nav className={s.filters} aria-label="Filter by category">
         {CATEGORIES.map((cat) => (
@@ -61,7 +61,7 @@ export default async function CollectionPage({
       <section className={s.grid}>
         {shown.map((product, i) => (
           <Reveal key={product.slug} delay={i * 80}>
-            <ProductCard product={product} index={i} />
+            <ProductCard product={product} />
           </Reveal>
         ))}
       </section>
@@ -73,7 +73,7 @@ export default async function CollectionPage({
       )}
 
       <div className={s.tail}>
-        <Rule />
+        <Bar weight="xs" />
         <p className="label muted" style={{ textAlign: "center", marginTop: 20 }}>
           More shapes follow the first release
         </p>
